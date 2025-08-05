@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anime Kız Galerisi</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Anime Kız Galerisi</h1>
+      <p>En sevdiğin anime kız karakterlerini keşfet!</p>
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="🔍 Karakter Ara">
+     
+        <select id="categoryFilter">
+          <option value="all">Tüm Kategoriler</option>
+          <option value="tsundere">Tsundere</option>
+          <option value="waifu">Waifu</option>
+          <option value="yandere">Yandere</option>
+        </select>
+        <button id="resetFilters">🔄 Filtreleri Sıfırla</button>
+        <button id="themeToggle">🌜 Karanlık Mod</button>
+      </div>
+    </div>
+  </header>
+  <nav class="giris">
+   <a href=""> <li>Giriş Yap</li></a>
+    <a href=""> <li>Üye Ol</li></a>
+  </nav>
+
+
+  <main class="gallery container" id="gallery">
+    <!-- Ornek kartlar -->
+    <div class="card" data-name="Rem" data-category="waifu">
+      <img src="https://i.pinimg.com/736x/ca/84/a4/ca84a45b104f905ea1dc368c7dd97595.jpg" alt="Rem">
+      <div class="caption">Rem - Re:Zero</div>
+    </div>
+    <div class="card" data-name="Zero Two" data-category="tsundere">
+      <img src="https://i.pinimg.com/736x/87/a1/a0/87a1a054481fb38e77f12a17436bf1fe.jpg" alt="Zero Two">
+      <div class="caption">Zero Two - Darling in the Franxx</div>
+    </div>
+    <div class="card" data-name="Yuno Gasai" data-category="yandere">
+      <img src="https://i.pinimg.com/736x/8e/9d/d7/8e9dd79cad75a378a420ab48bd9cc90a.jpg" alt="Yuno">
+      <div class="caption">Yuno Gasai - Mirai Nikki</div>
+    </div>
+    <div class="card" data-name="Shizuka Mikazuki" data-category="waifu">
+      <img src="https://i.pinimg.com/736x/9a/d5/89/9ad589b92b63e7b3bbaff07e6fe2e7ba.jpg" alt="Shizuka Mikazuki">
+      <div class="caption">Shizuka Mikazuki - KonoSuba</div>
+    </div>
+  </main>
+
+  <div id="popup" class="popup">
+    <span class="close">&times;</span>
+    <img id="popupImg" src="" alt="Büyük Görsel">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Furki'nin Anime Galerisi | Tüm hakları saklıdır.</p>
+    <p>Bu site Furki tarafından geliştirildi.</p>
+    <p>İletişim: <a href=""></a> </p>
+  </footer>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

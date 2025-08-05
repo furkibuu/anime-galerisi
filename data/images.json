@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Rem",
+    "category": "waifu",
+    "url": "https://i.imgur.com/1.jpg",
+    "description": "Rem, Re:Zero animesinin sevimli hizmetçisi."
+  },
+  {
+    "id": 2,
+    "name": "Zero Two",
+    "category": "tsundere",
+    "url": "https://i.imgur.com/2.jpg",
+    "description": "Zero Two, Darling in the Franxx animesinden güçlü bir karakter."
+  },
+  {
+    "id": 3,
+    "name": "Yuno Gasai",
+    "category": "yandere",
+    "url": "https://i.imgur.com/3.jpg",
+    "description": "Yuno, Mirai Nikki'de yandere karakterin zirvesi."
+  }
+]
