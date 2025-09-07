@@ -43,7 +43,8 @@ HTML, CSS ve JavaScript kullanılarak yapılmıştır.
 
 ## 📧 İletişim
 
-Proje geliştirici: **Furki**\
+Proje geliştirici: **Furki**
 
-**Özel Projeler İçin [Discor'dan](https://discord.com/users/453534543194882049) iletişime geçebilirsiniz veya Discord sunucumuza katılabilirsiniz.
+**Özel Projeler İçin [Discor'dan](https://discord.com/users/453534543194882049) iletişime geçebilirsiniz veya Discord sunucumuza katılabilirsiniz.**
+
 🗨️ Discord Sunucum: [Katıl](https://discord.gg/7ntDds4ff3)
