@@ -1,4 +1,4 @@
-/* Reset & Temel Ayarlar */
+
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +23,7 @@ body.dark {
   margin: auto;
 }
 
-/* Header */
+
 header {
   background: linear-gradient(135deg, #ec407a, #d81b60);
   color: white;
@@ -47,7 +47,6 @@ header p {
   opacity: 0.9;
 }
 
-/* Nav (Giriş - Üye ol) */
 .giris {
   position: absolute;
   top: 20px;
@@ -74,7 +73,7 @@ header p {
   color: #ffe4f1;
 }
 
-/* Kontroller */
+
 .controls {
   margin-top: 25px;
   display: flex;
@@ -124,7 +123,7 @@ body.dark .controls select {
   transform: translateY(1px) scale(0.98);
 }
 
-/* Galeri */
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -154,7 +153,7 @@ body.dark .card {
   transform: translateY(0) translateX(0) scale(1);
 }
 
-/* Animasyon türleri */
+
 .card[data-anim="fade-up"] {
   transform: translateY(40px);
 }
@@ -200,7 +199,7 @@ body.dark .caption {
   color: #f06292;
 }
 
-/* Popup */
+
 .popup {
   display: none;
   position: fixed;
@@ -246,7 +245,7 @@ body.dark .caption {
   transform: rotate(90deg) scale(1.1);
 }
 
-/* Animations */
+
 @keyframes fadeIn {
   from { opacity: 0 }
   to { opacity: 1 }
@@ -279,7 +278,7 @@ footer a:hover {
   color: white;
 }
 
-/* Mobil uyum */
+
 @media (max-width: 600px) {
   .controls {
     flex-direction: column;
