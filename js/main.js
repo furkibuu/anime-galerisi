@@ -1,4 +1,3 @@
-// 🌙 Tema Değiştirme
 const themeToggle = document.getElementById('themeToggle');
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme === 'dark') {
@@ -17,7 +16,6 @@ themeToggle.onclick = () => {
   }
 };
 
-// 🔍 Arama ve Kategori Filtreleme
 const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
 const resetFilters = document.getElementById('resetFilters');
@@ -53,7 +51,6 @@ resetFilters.addEventListener('click', () => {
   filterGallery();
 });
 
-// 🖼️ Popup (Büyük Görsel)
 const popup = document.getElementById('popup');
 const popupImg = document.getElementById('popupImg');
 const closeBtn = document.querySelector('.close');
@@ -62,7 +59,7 @@ document.querySelectorAll('.card img').forEach(img => {
   img.addEventListener('click', () => {
     popup.style.display = 'flex';
     popupImg.src = img.src;
-    document.body.style.overflow = 'hidden'; // Arka plan scroll kapat
+    document.body.style.overflow = 'hidden'; 
   });
 });
 
@@ -77,12 +74,12 @@ function closePopup() {
   document.body.style.overflow = 'auto';
 }
 
-// Scroll Animasyonu (Kartlar göründükçe fade-in)
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show');
-      observer.unobserve(entry.target); // bir kez gösterildikten sonra tekrar kontrol etmesin
+      observer.unobserve(entry.target); 
     }
   });
 }, { threshold: 0.2 });
