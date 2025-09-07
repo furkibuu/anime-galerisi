@@ -1,4 +1,4 @@
-/* Temel ayarlar */
+/* Reset & Temel Ayarlar */
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +9,12 @@ body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #fce4ec, #f8bbd0);
   color: #333;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 body.dark {
-  background: #121212;
-  color: #f1f1f1;
+  background: #0f0f0f;
+  color: #eaeaea;
 }
 
 .container {
@@ -25,126 +25,174 @@ body.dark {
 
 /* Header */
 header {
-  background-color: #ec407a;
+  background: linear-gradient(135deg, #ec407a, #d81b60);
   color: white;
-  padding: 40px 0;
+  padding: 50px 0 80px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 header h1 {
-  font-size: 2.8em;
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 header p {
-  font-size: 1.1em;
-  margin-top: 10px;
+  font-size: 1.2em;
+  margin-top: 12px;
+  opacity: 0.9;
 }
+
+/* Nav (Giriş - Üye ol) */
 .giris {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 30px;
 }
-.giris li {
-  display: inline-block;
-  margin-left: 20px;
+
+.giris ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.giris ul li a {
   color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.giris li:hover {
-  color: #fce4ec;
-  transition: color 0.3s;
   font-weight: 600;
-
-  text-decoration: underline;
-
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
+.giris ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffe4f1;
+}
 
+/* Kontroller */
 .controls {
-  margin-top: 20px;
+  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
 }
 
 .controls input,
 .controls select,
 .controls button {
-  padding: 10px 15px;
+  padding: 12px 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1em;
   outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.controls input {
-  width: 200px;
-}
-
+.controls input,
 .controls select {
-  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+body.dark .controls input,
+body.dark .controls select {
+  background: rgba(30, 30, 30, 0.9);
+  color: #eaeaea;
 }
 
 .controls button {
-  background-color: #880e4f;
+  background: linear-gradient(135deg, #880e4f, #ad1457);
   color: white;
   cursor: pointer;
-  transition: background 0.3s;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .controls button:hover {
-  background-color: #ad1457;
+  background: linear-gradient(135deg, #ad1457, #c2185b);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.controls button:active {
+  transform: translateY(1px) scale(0.98);
 }
 
 /* Galeri */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  padding: 50px 0;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 60px 0;
 }
 
 .card {
-  background: white;
-  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, opacity 0.8s ease;
   cursor: pointer;
+  backdrop-filter: blur(8px);
+  border: 2px solid transparent;
+  opacity: 0;
 }
 
 body.dark .card {
-  background: #1e1e1e;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  background: rgba(30, 30, 30, 0.9);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Animasyon türleri */
+.card[data-anim="fade-up"] {
+  transform: translateY(40px);
+}
+.card[data-anim="fade-down"] {
+  transform: translateY(-40px);
+}
+.card[data-anim="fade-left"] {
+  transform: translateX(-40px);
+}
+.card[data-anim="fade-right"] {
+  transform: translateX(40px);
+}
+.card[data-anim="zoom-in"] {
+  transform: scale(0.8);
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+  border: 2px solid #ec407a;
 }
 
 .card img {
   width: 100%;
-  height: 350px;
-  display: block;
-}
-.card img:hover {
-
-  filter: brightness(0.9);
+  height: 340px;
+  object-fit: cover;
   transition: filter 0.3s ease;
 }
-body.dark .card img {
-  filter: brightness(0.8);
+
+.card img:hover {
+  filter: brightness(0.9) contrast(1.05);
 }
 
 .caption {
-  padding: 15px;
+  padding: 16px;
   text-align: center;
   font-weight: 600;
+  font-size: 1.1em;
   color: #ec407a;
 }
 
@@ -157,39 +205,78 @@ body.dark .caption {
   display: none;
   position: fixed;
   z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(8px);
-  background-color: rgba(0,0,0,0.8);
+  inset: 0;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0,0,0,0.85);
   align-items: center;
   justify-content: center;
+  animation: fadeIn 0.3s ease forwards;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 0.3s ease;
 }
 
 .popup img {
   max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  max-height: 80%;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  margin-bottom: 15px;
+  animation: zoomIn 0.3s ease;
+}
+
+.popup p {
+  color: white;
+  font-size: 1.1em;
+  font-weight: 500;
 }
 
 .popup .close {
   position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 2em;
+  top: 25px;
+  right: 35px;
+  font-size: 2.2em;
   color: white;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.popup .close:hover {
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 /* Footer */
 footer {
-  background-color: #ec407a;
+  background: linear-gradient(135deg, #ec407a, #d81b60);
   color: white;
   text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
+  padding: 25px 0;
+  margin-top: 50px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+  color: #ffe4f1;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: white;
 }
 
 /* Mobil uyum */
@@ -203,5 +290,18 @@ footer {
   .controls select,
   .controls button {
     width: 100%;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  .giris {
+    position: static;
+    margin-bottom: 15px;
+  }
+
+  .giris ul {
+    justify-content: center;
   }
 }
