@@ -94,7 +94,7 @@ window.addEventListener("load", () => {
 });
 
 
-// Favorilere ekleme sistemi (localStorage)
+
 const favButtons = document.querySelectorAll('.fav-btn');
 const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
@@ -102,10 +102,10 @@ favButtons.forEach(btn => {
   const card = btn.closest('.card');
   const name = card.dataset.name;
 
-  // Sayfa açıldığında aktifse işaretle
+
   if (favorites.includes(name)) btn.classList.add('active');
 
-  // Tıklama olayı
+
   btn.addEventListener('click', e => {
     e.stopPropagation();
     btn.classList.toggle('active');
