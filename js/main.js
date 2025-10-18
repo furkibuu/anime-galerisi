@@ -87,3 +87,57 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.card').forEach(card => {
   observer.observe(card);
 });
+
+window.addEventListener("load", () => {
+  document.getElementById("loader").style.opacity = "0";
+  setTimeout(() => document.getElementById("loader").remove(), 400);
+});
+
+
+// Favorilere ekleme sistemi (localStorage)
+const favButtons = document.querySelectorAll('.fav-btn');
+const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+favButtons.forEach(btn => {
+  const card = btn.closest('.card');
+  const name = card.dataset.name;
+
+  // Sayfa açıldığında aktifse işaretle
+  if (favorites.includes(name)) btn.classList.add('active');
+
+  // Tıklama olayı
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    btn.classList.toggle('active');
+    if (btn.classList.contains('active')) {
+      favorites.push(name);
+    } else {
+      const index = favorites.indexOf(name);
+      if (index > -1) favorites.splice(index, 1);
+    }
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  });
+});
+
+
+const randomBtn = document.getElementById('randomCharacter');
+
+
+randomBtn.addEventListener('click', () => {
+  const random = Math.floor(Math.random() * cards.length);
+  const card = cards[random];
+  const img = card.querySelector('img').src;
+  const caption = card.querySelector('.caption').innerText;
+  const popup = document.getElementById('popup');
+  const popupImg = document.getElementById('popupImg');
+  const popupCaption = document.getElementById('popupCaption');
+
+  popupImg.src = img;
+  popupCaption.textContent = caption;
+  popup.style.display = 'flex';
+});
+
+
+document.querySelector('.popup .close').addEventListener('click', () => {
+  document.getElementById('popup').style.display = 'none';
+});

@@ -8,6 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="loader">
+  <div class="spinner"></div>
+</div>
+
   <header>
     <div class="container">
       <nav class="giris">
@@ -33,7 +37,7 @@
   </header>
 
   <main class="gallery container" id="gallery">
-    <div class="card" data-name="Rem" data-category="waifu">
+    <div class="card" data-name="Rem" data-category="waifu", data-info="Tatlı, sadık ve sevgi dolu bir hizmetçi.">
       <img src="https://i.pinimg.com/736x/ca/84/a4/ca84a45b104f905ea1dc368c7dd97595.jpg" alt="Rem">
       <div class="caption">Rem - Re:Zero</div>
     </div>
@@ -89,7 +93,10 @@
     <img id="popupImg" src="" alt="Büyük Görsel">
     <p id="popupCaption"></p>
   </div>
-
+  
+<div style="text-align:center; margin: 40px 0;">
+  <button id="randomCharacter" class="controls-btn">🎲 Rastgele Karakter</button>
+</div>
   <footer>
     <p>&copy; 2025 Furki'nin Anime Galerisi | Tüm hakları saklıdır.</p>
     <p>Bu site Furki tarafından geliştirildi.</p>
